@@ -18,34 +18,36 @@
             overflow: hidden;
         }
 
-        /* 載入指示器 (Spinner) 外框 */
+        /* 載入指示器 (Spinner) 外框 - 愛心定位的參考點 */
         .spinner-wrapper {
-            position: relative;
-            width: 80px; /* 增加尺寸 */
+            position: relative; 
+            width: 80px; 
             height: 80px;
         }
 
-        /* 旋轉外圈 (模擬漸層效果的深灰紫色) */
+        /* 旋轉外圈 */
         .spinner {
-            border: 8px solid #f0f0f0; /* 基礎淺灰色邊框 */
-            border-top: 8px solid #a29bfe; /* 灰紫色漸層起點色 */
-            border-bottom: 8px solid #6c5ce7; /* 灰紫色漸層終點色 */
+            border: 8px solid #f0f0f0;
+            border-top: 8px solid #a29bfe;
+            border-bottom: 8px solid #6c5ce7;
             border-radius: 50%;
             width: 80px;
             height: 80px;
-            animation: spin 1s linear infinite; /* 旋轉動畫 */
-            box-shadow: 0 0 10px rgba(108, 92, 231, 0.3); /* 輕微光暈 */
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
         }
 
-        /* 圓圈內的內容 (愛心) */
+        /* 圓圈內的內容 (愛心) - 最終修正區 */
         .heart {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2.5em; /* 粉色愛心放大 */
-            color: #ff7979; /* 粉紅色 */
-            animation: bounce 0.8s infinite alternate; /* 跳動動畫 */
+            left: 60%;
+            top: 65%; 
+            
+            
+            font-size: 2.5em; 
+            color: #ff7979;
+            line-height: 1; 
+            animation: bounce 0.8s infinite alternate;
         }
 
         /* CSS 動畫定義 */
@@ -54,9 +56,11 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* 跳動動畫 */
         @keyframes bounce {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            100% { transform: translate(-50%, -60%) scale(1.1); } /* 向上輕微跳動和放大 */
+            /* 讓愛心從 corrected center 再向上跳動 */
+            0% { transform: translate(-50%, -50%) scale(1); } 
+            100% { transform: translate(-50%, -65%) scale(1.1); } /* 向上跳動 15% */
         }
     </style>
 </head>
