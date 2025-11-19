@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>💖 準備好囉！即將前往您的網站...</title>
-    <meta http-equiv="refresh" content="3; url=https://linkgoods.com/k1k1"> <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap'); /* 引入思源黑體 */
-
+    <title>✨ 正在為您準備網站...</title>
+    <meta http-equiv="refresh" content="1; url=https://linkgoods.com/k1k1">
+    
+    <style>
         body {
             /* 讓內容垂直和水平居中 */
             display: flex;
@@ -15,141 +15,55 @@
             min-height: 100vh;
             margin: 0;
             
-            /* 背景漸層 */
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%); /* 柔和的天藍漸層 */
-            font-family: 'Noto Sans TC', sans-serif; /* 使用思源黑體 */
-            color: #333;
+            /* 紫色漸層背景 */
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); 
+            font-family: 'Noto Sans TC', sans-serif;
+            color: white; /* 文字顏色設為白色，在紫色背景上更清晰 */
             text-align: center;
-            overflow: hidden; /* 隱藏溢出內容 */
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 50px 70px;
-            border-radius: 20px; /* 更圓潤的邊角 */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 更有質感的陰影 */
-            transform: translateY(0); /* 初始位置 */
-            animation: fadeInScale 0.8s ease-out forwards; /* 載入動畫 */
-            position: relative;
-            z-index: 10;
-        }
-        h1 {
-            color: #ff6b6b; /* 可愛活潑的粉紅色 */
-            font-size: 2.2em;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        p {
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        a {
-            background-color: #74b9ff; /* 溫和的藍色按鈕 */
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s ease-in-out; /* 平滑過渡 */
-            display: inline-block; /* 讓 padding 和 transform 生效 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        a:hover {
-            background-color: #0984e3; /* hover 時顏色變深 */
-            transform: translateY(-3px); /* 輕微上浮效果 */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-        .icon {
-            font-size: 3.5em; /* 圖示更大 */
-            margin-bottom: 20px;
-            color: #feca57; /* 鮮豔的黃色圖示 */
-            animation: bounceIn 0.8s ease-out forwards; /* 圖示彈跳進場 */
-            animation-delay: 0.2s; /* 稍微延遲圖示動畫 */
-            display: inline-block;
         }
 
-        /* 載入動畫 */
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+        /* 標題和文字樣式 */
+        h1 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 讓文字更有質感 */
         }
         
-        @keyframes bounceIn {
-            0% { transform: scale(0.3); opacity: 0; }
-            50% { transform: scale(1.1); opacity: 1; }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* 載入指示器 */
+        /* 載入指示器 (Spinner) */
         .spinner {
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid #ff9f43; /* 活潑的橘色 */
+            /* 圓圈邊框 */
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            /* 載入動態邊框 (質感深紫色) */
+            border-top: 6px solid #feca57; 
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto 0; /* 置中 */
-            opacity: 0;
-            animation: spin 1s linear infinite, fadeIn 0.5s ease-out forwards;
-            animation-delay: 0.5s; /* 延遲載入指示器顯示 */
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite; /* 旋轉動畫 */
+            margin-bottom: 20px;
         }
 
+        /* 旋轉動畫定義 */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
 
-        /* 背景小圓點裝飾 */
-        .dot {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            opacity: 0;
-            animation: floatAndFade 10s infinite ease-in-out;
-            pointer-events: none; /* 讓滑鼠可以穿透 */
+        /* 手動跳轉連結樣式 */
+        a {
+            color: #ffda79; /* 活潑的亮黃色，在紫色上形成對比 */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-        .dot:nth-child(1) { width: 30px; height: 30px; top: 10%; left: 15%; animation-delay: 0s; }
-        .dot:nth-child(2) { width: 45px; height: 45px; top: 20%; right: 10%; animation-delay: 2s; }
-        .dot:nth-child(3) { width: 20px; height: 20px; bottom: 15%; left: 30%; animation-delay: 4s; }
-        .dot:nth-child(4) { width: 35px; height: 35px; top: 50%; left: 5%; animation-delay: 6s; }
-        .dot:nth-child(5) { width: 25px; height: 25px; bottom: 5%; right: 20%; animation-delay: 8s; }
-
-        @keyframes floatAndFade {
-            0% { transform: translateY(0) scale(0.5); opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        a:hover {
+            color: #fff;
         }
-
     </style>
 </head>
 <body>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-
-    <div class="container">
-        <div class="icon">✨</div> <h1>快要抵達您的網站囉！</h1>
-        <p>您的專屬旅程即將開始，請稍候一下下喔。</p>
-        <div class="spinner"></div> <p style="margin-top: 25px;">
-            如果等不及了，可以直接點這裡：
-            <a href="https://linkgoods.com/k1k1">🎉 立即出發！</a>
-        </p>
-    </div>
+    <div class="spinner"></div>
+    <h1>快要抵達您的網站囉！</h1>
+    <a href="https://linkgoods.com/k1k1">如果沒有自動跳轉，請點擊這裡立即出發</a>
 </body>
 </html>
