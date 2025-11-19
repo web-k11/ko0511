@@ -2,66 +2,66 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>準備前往...</title>
-    <meta http-equiv="refresh" content="1; url=https://linkgoods.com/k1k1">
+    <title>...</title>
+    <meta http-equiv="refresh" content="0.5; url=https://linkgoods.com/k1k1">
     
     <style>
         body {
-            /* 純白背景 */
-            background-color: #ffffff; 
+            /* 純白色背景 */
+            background-color: #ffffff;
+            /* 讓內容垂直和水平居中 */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            overflow: hidden; /* 確保沒有滾動條 */
+            overflow: hidden;
         }
 
-        /* 載入容器，包含圓圈和愛心 */
-        .loading-container {
+        /* 載入指示器 (Spinner) 外框 */
+        .spinner-wrapper {
             position: relative;
-            width: 80px; /* 容器寬高 */
+            width: 80px; /* 增加尺寸 */
             height: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* 載入指示器 (Spinner) - 紫色轉圈 */
+        /* 旋轉外圈 (模擬漸層效果的深灰紫色) */
         .spinner {
-            position: absolute; /* 相對於容器定位 */
-            border: 6px solid rgba(108, 92, 231, 0.2); /* 淺紫色背景邊框 */
-            border-top: 6px solid #6c5ce7; /* 深紫色載入邊框 */
+            border: 8px solid #f0f0f0; /* 基礎淺灰色邊框 */
+            border-top: 8px solid #a29bfe; /* 灰紫色漸層起點色 */
+            border-bottom: 8px solid #6c5ce7; /* 灰紫色漸層終點色 */
             border-radius: 50%;
-            width: 80px; /* 圓圈寬高與容器一致 */
+            width: 80px;
             height: 80px;
             animation: spin 1s linear infinite; /* 旋轉動畫 */
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.3); /* 輕微光暈 */
         }
 
-        /* 愛心表情符號 */
+        /* 圓圈內的內容 (愛心) */
         .heart {
-            font-size: 3em; /* 愛心大小 */
-            color: #ff6b6b; /* 粉色愛心 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em; /* 粉色愛心放大 */
+            color: #ff7979; /* 粉紅色 */
             animation: bounce 0.8s infinite alternate; /* 跳動動畫 */
-            position: relative; /* 確保在 spinner 之上 */
-            z-index: 1; /* 確保在 spinner 上層 */
         }
 
-        /* 旋轉動畫定義 */
+        /* CSS 動畫定義 */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        /* 愛心跳動動畫定義 */
         @keyframes bounce {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); } /* 輕微放大跳動 */
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -60%) scale(1.1); } /* 向上輕微跳動和放大 */
         }
     </style>
 </head>
 <body>
-    <div class="loading-container">
+    <div class="spinner-wrapper">
         <div class="spinner"></div>
         <div class="heart">💖</div>
     </div>
