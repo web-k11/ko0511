@@ -2,45 +2,49 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>✨ 正在為您準備網站...</title>
+    <title>準備前往...</title>
     <meta http-equiv="refresh" content="1; url=https://linkgoods.com/k1k1">
     
     <style>
         body {
-            /* 讓內容垂直和水平居中 */
+            /* 純白背景 */
+            background-color: #ffffff; 
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            
-            /* 紫色漸層背景 */
-            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); 
-            font-family: 'Noto Sans TC', sans-serif;
-            color: white; /* 文字顏色設為白色，在紫色背景上更清晰 */
-            text-align: center;
+            overflow: hidden; /* 確保沒有滾動條 */
         }
 
-        /* 標題和文字樣式 */
-        h1 {
-            font-size: 1.5em;
-            font-weight: 400;
-            margin-bottom: 30px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 讓文字更有質感 */
+        /* 載入容器，包含圓圈和愛心 */
+        .loading-container {
+            position: relative;
+            width: 80px; /* 容器寬高 */
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
-        /* 載入指示器 (Spinner) */
+
+        /* 載入指示器 (Spinner) - 紫色轉圈 */
         .spinner {
-            /* 圓圈邊框 */
-            border: 6px solid rgba(255, 255, 255, 0.3);
-            /* 載入動態邊框 (質感深紫色) */
-            border-top: 6px solid #feca57; 
+            position: absolute; /* 相對於容器定位 */
+            border: 6px solid rgba(108, 92, 231, 0.2); /* 淺紫色背景邊框 */
+            border-top: 6px solid #6c5ce7; /* 深紫色載入邊框 */
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 80px; /* 圓圈寬高與容器一致 */
+            height: 80px;
             animation: spin 1s linear infinite; /* 旋轉動畫 */
-            margin-bottom: 20px;
+        }
+
+        /* 愛心表情符號 */
+        .heart {
+            font-size: 3em; /* 愛心大小 */
+            color: #ff6b6b; /* 粉色愛心 */
+            animation: bounce 0.8s infinite alternate; /* 跳動動畫 */
+            position: relative; /* 確保在 spinner 之上 */
+            z-index: 1; /* 確保在 spinner 上層 */
         }
 
         /* 旋轉動畫定義 */
@@ -49,21 +53,17 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* 手動跳轉連結樣式 */
-        a {
-            color: #ffda79; /* 活潑的亮黃色，在紫色上形成對比 */
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #fff;
+        /* 愛心跳動動畫定義 */
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); } /* 輕微放大跳動 */
         }
     </style>
 </head>
 <body>
-    <div class="spinner"></div>
-    <h1>快要抵達您的網站囉！</h1>
-    <a href="https://linkgoods.com/k1k1">如果沒有自動跳轉，請點擊這裡立即出發</a>
+    <div class="loading-container">
+        <div class="spinner"></div>
+        <div class="heart">💖</div>
+    </div>
 </body>
 </html>
